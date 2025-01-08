@@ -13,7 +13,7 @@ import 'package:provider_clean/features/task/presentation/provider/tasks_provide
 
 var getIt = GetIt.instance;
 
-void setup() async {
+Future setup() async {
   await registerDatabase();
   registerDataSources();
   registerRepositories();

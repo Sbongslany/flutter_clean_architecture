@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_clean/features/task/presentation/provider/tasks_provider.dart';
+import 'package:provider_clean/features/task/presentation/widget/create_task.dart';
 import 'package:provider_clean/features/task/presentation/widget/task_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -36,7 +37,13 @@ class _HomePageState extends State<HomePage> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showDialog(
+              context: context,
+              builder: (context) {
+                return const CreateTaskDialog();
+              });
+        },
       ),
     );
   }

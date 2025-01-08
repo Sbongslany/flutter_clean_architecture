@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_clean/features/task/presentation/page/single_task_page.dart';
 import 'package:provider_clean/features/task/presentation/provider/tasks_provider.dart';
 
 import '../../domain/entity/task.dart';
@@ -21,6 +22,11 @@ class TaskWidget extends StatelessWidget {
               .updateTasks(task.copyWith(isCompleted: value));
         },
       ),
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+          return SingleTaskPage(id: task.id!);
+        }));
+      },
     );
   }
 }
